@@ -15,11 +15,30 @@ pros::Controller controller(pros::E_CONTROLLER_MASTER);
 
 
 //---------------AUTONOMOUS FUNCTIONS---------------
-void moveForward(int centimeters, int velocity) {
+void moveForward(int distance, int velocity) { // distance in centimeters
+    int turnDeg = distance * ticksPerCM;
+    int leftEncVal = 0; // current left encoder value
+    int rightEncVal = 0;
+    int diff = leftEncVal - rightEncVal;
 
 }
 
-// degrees here is degrees turned by body
-void turn(int degrees, int speed) {
+void turn(int degrees, int speed) { // degrees turned by bot
+    int turnDeg = degrees * ticksPerDegree;
+}
 
+
+//---------------HELPER FUNCTIONS---------------
+void setDriveVoltage(int left, int right) {
+    driveLeftFront.move(left + right);
+    driveLeftBack.move(left + right);
+    driveRightFront.move(left - right);
+    driveRightBack.move(left - right);
+}
+
+void setIntakeRollerVoltage(int power, int rollerDownPower, int rollerUpPower) {
+    intakeLeft.move(127 * power);
+    intakeRight.move(127 * power);
+    rollerDown.move(127 * rollerDownPower);
+    rollerUp.move(127 * rollerUpPower);
 }

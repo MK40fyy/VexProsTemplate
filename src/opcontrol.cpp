@@ -1,20 +1,5 @@
 #include "main.h"
 
-//---------------HELPER FUNCTIONS---------------
-void setDriveVoltage(int leftY, int rightX) {
-    driveLeftFront.move(leftY + rightX);
-    driveLeftBack.move(leftY + rightX);
-    driveRightFront.move(leftY - rightX);
-    driveRightBack.move(leftY - rightX);
-}
-
-void setIntakeRollerVoltage(int power, int rollerDownPower, int rollerUpPower) {
-    intakeLeft.move(127 * power);
-    intakeRight.move(127 * power);
-    rollerDown.move(127 * rollerDownPower);
-    rollerUp.move(127 * rollerUpPower);
-}
-
 //---------------DRIVER FUNCTIONS---------------
 void controlDrive() {
     int leftJoystickY = controller.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_Y);
