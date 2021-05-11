@@ -24,10 +24,10 @@
   * to keep execution time for this mode under a few seconds.
   */
 void initialize() {
-    // pros::lcd::initialize();
-    // pros::lcd::set_text(1, "Hello PROS User!");
-
-    // pros::lcd::register_btn1_cb(on_center_button);
+    driveLeftFront.set_brake_mode(pros::E_MOTOR_BRAKE_BRAKE);
+    driveLeftBack.set_brake_mode(pros::E_MOTOR_BRAKE_BRAKE);
+    driveRightFront.set_brake_mode(pros::E_MOTOR_BRAKE_BRAKE);
+    driveRightBack.set_brake_mode(pros::E_MOTOR_BRAKE_BRAKE);
 }
 
 /**

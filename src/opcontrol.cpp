@@ -11,8 +11,8 @@ void controlDrive() {
         rightJoystickX = 0;
     }
 
-    int leftVoltage = leftJoystickY * leftJoystickY * leftJoystickY / (127 * 127);
-    int rightVoltage = rightJoystickX * rightJoystickX * rightJoystickX / (127 * 127);
+    int leftVoltage = leftJoystickY * 1 / (1);
+    int rightVoltage = rightJoystickX * 1 / (1);
 
     setDriveVoltage(leftVoltage, rightVoltage);
 }
